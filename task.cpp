@@ -30,15 +30,16 @@ class ListInt
 	private:
 		class Node // класс узла списка - полностью инкапсулирован и недоступен снаружи класса ListInt
 		{
-			int _value;
-			Node *_prev *_next;
-			Node();
+			private:
+				int _value;
+				Node *_prev , *_next;
+				Node();
 			public:
-			Node(int value);
-			int& value();
-			int  value() const;
-			Node*& prev();
-			Node*& next();
+				Node(int value);
+				int& value();
+				int  value() const;
+				Node*& prev();
+				Node*& next();
 		};
 		Node *_head, *_tail;  // Указатели на голову и хвост списка
 		size_t _size;         // количество элементов

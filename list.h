@@ -1,37 +1,67 @@
 #pragma once
 
-class List{
-		//Can we use struct, what's reason to use "class" for Node?
-		class Node
-		{
-			private:
-				short unsigned _value; //Value of array's element
-				Node * head; //Link to previous Node
-				Node * tail; //Link to next Node
-			public:
-				Node ();
-		}; 
-	public:
-		class iterator{
-				Node* current; //Current Node with two links and value
-			public:
-				void next(); //Why it returned void?
-				void prev(); //Why it returned void? Maybe it may return iterator*
-				bool valid() const; //Checking for iterator life
-				int& get(); //get wr-method
-				int get() const; //get only-read method
-				bool equal(/*const interator*/) const; //Compare two iterators - MISTAKE HERE
-		};
+class ListInt
+{
+  private:
+	class Node // класс узла списка - полностью инкапсулирован и недоступен снаружи класса ListInt
+	{
+	  private:
+		int _value;
+		Node *_prev, *_next;
+		Node();
 
-		void push_back(); //Push to tail of List new element
-		iterator begin(); //Link for List's begin
-		iterator end(); //Link for List's end
-		iterator last(); //Link to next-end
-		iterator before(); //Link to prev.begin 
-		size_t size() const; //size of List
-		bool empty() const; //checking for list isn't empty
-		//<c-tors>
-		//<d-tors>
-		void insert(iterator, int); //insert new iterator to "int" position
-		void erase(iterator); //remove current iterator from List
+	  public:
+		Node(int value);
+		int &value();
+		int value() const;
+		Node *&prev();
+		Node *&next();
+	};
+	Node *_head, *_tail; // Указатели на голову и хвост списка
+	size_t _size;		 // количество элементов
+  public:
+	ListInt();  // default c-tor
+	~ListInt(); // d-tor
+
+	size_t size() const; // получить количество
+	bool empty() const;  // предикат пустого списка
+
+	void reverse();						 // поменять порядок на обратный
+	void grab_and_append(ListInt &from); // забрать все элементы у другого списка и добавить их в конец этого
+	void sort();						 // отсортировать по возрастанию (потом, когда пройдем перегрузку операторов, можно
+										 // добавить сюда параметр - функтор сравнения на меньше для любого порядка сортировки)
+
+	class iterator // класс итератора списка
+	{
+	  private:
+		Node *_current;
+		iterator(Node *node); // основной конструктор: запрещен для использования вне списка
+		friend class ListInt; // чтобы воспользоваться этим конструктором из ListInt он должен быть объявлен дружественным
+	  public:
+		iterator(const iterator &); // copy c-tor
+		~iterator();
+
+		bool valid() const; // true если _current != NULL
+
+		// получить данные
+		int &get();
+		int get() const;
+
+		void prev(); // перейти к _current->next()
+		void next(); // перейти к _current->prev()
+
+		bool equal(const iterator &other) const;
+	};
+
+	// фабрики итераторов
+	iterator head();
+	iterator tail();
+
+	iterator insert(iterator pos, int value); // возвращает позицию после вставленной
+	iterator erase(iterator &pos);			  // Обратить внимание: после удаления узла итератор позиции должен стать инвалидным
+											  // возвращает итератор указывающий на узел следующий после удаленного
+
+	void push_back(int val); // добавление в конец
+	void pop_back();		 // выкинуть последний элемент
+							 //...
 };
