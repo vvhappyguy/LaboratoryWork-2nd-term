@@ -14,47 +14,73 @@ ListInt::Node::Node()
 
 ListInt::Node::Node(int value)
 {
-    Node *temp, *p;
-    temp = new Node;
-    temp = (Node*)malloc(sizeof(Node));
-    p = next();
-    temp->_value = value;
-    temp->_next = p;
-    temp->_prev = prev();
-    if(p != nullptr)
+    p = prev();
+    Node node = new Node;
+    if (p->_prev != nullptr)
     {
-        p->_prev = temp;
+        p->_next = node;
+        node->_prev = p;
+        node->_next = nullptr;
+        node->_value = value;
+    }
+    else
+    {
+        node->_prev = nullptr;
+        node->_next = nullptr;
+        node->_value = vlaue;
     }
 }
 
-int ListInt::Node::value ()const
+int ListInt::Node::value() const
 {
     return this->_value;
 }
 
-int& ListInt::Node::value()
+int &ListInt::Node::value()
 {
-    return this->_value;   
+    return this->_value;
 }
 
-ListInt::Node*& ListInt::Node::prev(){
+ListInt::Node *&ListInt::Node::prev()
+{
     return this->_prev;
 }
 
-ListInt::Node*& ListInt::Node::next(){
+ListInt::Node *&ListInt::Node::next()
+{
     return this->_next;
 }
 
+/*
+*
+*
+*/
 
+//Iterator c-tor, copy-tor and d-tor
 ListInt::iterator::iterator(Node *node)
 {
-    
+    this->*_current = *node;
+}
+
+ListInt::iterator::iterator(const iterator &)
+{
+    iter = new iterator;
+    iter->_current = iterator->_current;
+}
+
+~ListInt::iterator::iterator()
+{
+}
+
+bool valid() const
+{
+    return _current != NULL ? true : false;
 }
 
 /* STD C-tor for ListInt*/
 ListInt::ListInt()
 {
-    ListInt* list = new ListInt;
+    ListInt *list = new ListInt;
     Node *node = nullptr;
     iterator iterator = ListInt::iterator(node);
     size_t size = 0;
@@ -62,5 +88,4 @@ ListInt::ListInt()
 
 ListInt::~ListInt()
 {
-
 }

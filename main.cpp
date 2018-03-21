@@ -5,6 +5,8 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+	 
+	/*
 	ListInt l;
 	l.push_back(1);
 	l.push_back(2);
@@ -27,4 +29,5 @@ int main(int argc, char* argv[])
 
 	cout << "size: " << l.size() << endl;
 	return 0;
+	*/
 }
