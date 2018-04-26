@@ -20,13 +20,25 @@ ListInt::iterator::iterator(Node *node){this->*_current = *node;}
 ListInt::iterator::iterator(const iterator& iter):_current(iter._current){}
 ~ListInt::iterator::iterator(){}
 bool valid() const {return _current != NULL ? true : false;}
-bool 
+bool invalid const {return _current == NULL ? true : false;}
+
+int& get(){return this->_current;}
+int get(){return this->_current;}
+
+void prev(){this->_current = this->_current.prev();}
+void next(){this->_current = this->_current.next();}
+
+bool equal(const iterator& other) const
+{
+	if((this.get().value() == other.value()) && (this.get().prev() == other.get().prev() && this.get().next() == other.get().next(){return true;} else {return false}
+}
+ 
 
 /* STD C-tor for ListInt*/
 ListInt::ListInt()
 {
     ListInt *list = new ListInt;
-    Node *node = nullptr;
+    Node *node = new Node;
     iterator iterator = ListInt::iterator(node);
     size_t size = 0;
 }
