@@ -37,10 +37,10 @@ bool equal(const iterator& other) const
 /* STD C-tor for ListInt*/
 ListInt::ListInt()
 {
-    ListInt *list = new ListInt;
-    Node *node = new Node;
-    iterator iterator = ListInt::iterator(node);
-    size_t size = 0;
+	Node *node = new Node;
+   ListInt::iterator iterator = new ListInt::iteator::iterator(node);
+   size_t size = 0;
+	
 }
 
 ListInt::~ListInt()
