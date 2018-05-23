@@ -1,48 +1,61 @@
-#include <cstlib>
+#include "ListInt.h"
+#include <iostream>
 
 using namespace std;
 
-//Node c-tors, d-tors and functions
-ListInt::Node::Node():_prev(NULL),_next(NULL),_value(0){}
-ListInt::Node::Node(int value):_prev(NULL),_next(NULL),_value(value){}
-int ListInt::Node::value() const{return this->_value;}
-int &ListInt::Node::value(){return this->_value;}
-ListInt::Node *&ListInt::Node::prev(){return this->_prev;}
-ListInt::Node *&ListInt::Node::next(){return this->_next;}
-
-/*
-*
-*
-*/
-
-//Iterator c-tor, copy-tor and d-tor
-ListInt::iterator::iterator(Node *node){this->*_current = *node;}
-ListInt::iterator::iterator(const iterator& iter):_current(iter._current){}
-~ListInt::iterator::iterator(){}
-bool valid() const {return _current != NULL ? true : false;}
-bool invalid const {return _current == NULL ? true : false;}
-
-int& get(){return this->_current;}
-int get(){return this->_current;}
-
-void prev(){this->_current = this->_current.prev();}
-void next(){this->_current = this->_current.next();}
-
-bool equal(const iterator& other) const
+ListInt::Node::Node(int value)
 {
-	if((this.get().value() == other.value()) && (this.get().prev() == other.get().prev() && this.get().next() == other.get().next(){return true;} else {return false}
-}
- 
-
-/* STD C-tor for ListInt*/
-ListInt::ListInt()
-{
-	Node *node = new Node;
-   ListInt::iterator iterator = new ListInt::iteator::iterator(node);
-   size_t size = 0;
-	
+    cout << "Node C-tor with value: " << value << endl;
+    int _value = value;
+    Node *_prev = nullptr;
+    Node *_next = nullptr;
 }
 
-ListInt::~ListInt()
+ListInt::Node::Node()
 {
+    cout << "Node Default C-tor" << endl;
+}
+
+int& ListInt::Node::value()
+{
+    return this->_value;
+}
+
+int  ListInt::Node::value() const
+{
+    return this->_value;
+}
+
+ListInt::Node*& ListInt::Node::prev()
+{
+    return this->_prev;
+}
+
+ListInt::Node*& ListInt::Node::next()
+{
+    return this->_next;
+}
+
+ListInt::ListInt::ListInt()
+{
+    cout << "List Default C-tor" << endl;
+    Node* _head = nullptr;
+    Node* _tail = nullptr;
+    size_t _size = 0;
+    cout << " head:" << _head << ", tail:" << _tail << endl;
+    cout << " size = " << _size << endl;
+}
+
+ListInt::ListInt::~ListInt()
+{
+    cout << "List D-tor" << endl;
+}
+
+
+
+int main()
+{
+    ListInt l;
+    
+    return 0;
 }
