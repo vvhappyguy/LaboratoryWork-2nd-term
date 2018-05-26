@@ -201,7 +201,6 @@ void ListInt::pop_back()
 void ListInt::reverse()
 {
     cout << "Reverse List" << endl;
-    int counter = 1;
     Node *tmp;
     for(ListInt::iterator it1 = head();it1.valid();it1.prev())
     {
@@ -234,6 +233,7 @@ ListInt::iterator ListInt::insert(ListInt::iterator pos, int value)
     pos._current->next()->prev() = node;
     node->next() = pos._current;
     cout << "InsertFunc new Node("<<value<<")" <<endl;
+    return pos;
 }
 
 ListInt::iterator ListInt::erase(ListInt::iterator pos)
@@ -243,6 +243,7 @@ ListInt::iterator ListInt::erase(ListInt::iterator pos)
     _size-=1;
     pos._current = NULL;
     cout << "Erase Func" << endl;
+    return pos;
 }
 
 
