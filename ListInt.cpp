@@ -56,7 +56,6 @@ ListInt::iterator::iterator(){
     _current = NULL;
 }
 
-//!!!
 ListInt::iterator::iterator(const iterator& it)
 {
     this->_current = it._current;
@@ -102,14 +101,20 @@ int ListInt::iterator::get() const
 
 void ListInt::iterator::prev()
 {
-    cout << "Prev elem of list" << endl;
-    this->_current = this->_current->prev();
+    // if(this->_current->prev()!=NULL)
+    // {
+        cout << "Prev elem of list" << endl;
+        this->_current = this->_current->prev();
+    // }
 }
 
 void ListInt::iterator::next()
 {
-    cout << "Next elem of list" << endl;
-    this->_current = this->_current->next();
+    // if(this->_current->next()!=NULL)
+    // {
+        cout << "Next elem of list" << endl;
+        this->_current = this->_current->next();
+    // }
 }
 
 bool ListInt::iterator::equal(const iterator& other) const
@@ -185,16 +190,6 @@ ListInt::iterator ListInt::tail()
     return ListInt::iterator(_tail);
 }
 
-ListInt::iterator ListInt::insert(iterator pos, int value)
-{
-
-}
-
-void ListInt::insert(iterator pos, Node* node)
-{
-
-}
-
 void ListInt::pop_back()
 {
     cout << "Pop_back Func. Tail has been pop : " << this->_tail << endl;
@@ -231,6 +226,25 @@ void ListInt::grab_and_append(ListInt& from)
     from._tail = NULL;
 }
 
+ListInt::iterator ListInt::insert(ListInt::iterator pos, int value)
+{
+    ListInt::Node *node = new ListInt::Node(value);
+    node->prev() = pos._current->prev();
+    pos._current->prev()->next() = node;
+    pos._current->next()->prev() = node;
+    node->next() = pos._current;
+    cout << "InsertFunc new Node("<<value<<")" <<endl;
+}
+
+ListInt::iterator ListInt::erase(ListInt::iterator pos)
+{
+    pos._current->prev()->next() = pos._current->next();
+    pos._current->next()->prev() = pos._current->prev();
+    _size-=1;
+    pos._current = NULL;
+    cout << "Erase Func" << endl;
+}
+
 
 
 
@@ -254,6 +268,15 @@ int main()
     }
 
     l.grab_and_append(l2);
+    
+    ListInt::iterator it(l.head());
+    it.next();
+    it.next();
+    l.insert(it,123);
+    it.next();
+    l.erase(it);
+    it.next();
+    
 
 
 
