@@ -6,7 +6,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 	 
-	/*
+	
 	ListInt l;
 	l.push_back(1);
 	l.push_back(2);
@@ -14,23 +14,19 @@ int main(int argc, char* argv[])
 	l.push_back(4);
 	l.push_back(5);
 
-	for(ListInt::iterator it = l.head(); l.valid(); l.next())
-		cout << l.get() << endl;
+	for(ListInt::iterator it = l.head(); it.valid(); it.next())
+		cout << it.get() << endl;
 
 	l.reverse();
 
-	for(ListInt::iterator it = l.head(); l.valid(); l.next())
-		cout << l.get() << endl;
+	for(ListInt::iterator it = l.head(); it.valid(); it.next())
+		cout << it.get() << endl;
 
-	l.sort();
+	// l.sort();
 
-	for(ListInt::iterator it = l.head(); l.valid(); l.next())
-		cout << l.get() << endl;
+	// for(ListInt::iterator it = l.head(); l.valid(); l.next())
+	// 	cout << l.get() << endl;
 
-	cout << "size: " << l.size() << endl;
+	// cout << "size: " << l.size() << endl;
 	return 0;
-	*/
-
-	ListInt l;
-	
 }

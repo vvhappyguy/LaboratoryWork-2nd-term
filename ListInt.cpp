@@ -248,61 +248,61 @@ ListInt::iterator ListInt::erase(ListInt::iterator pos)
 
 
 
-int main()
-{
-    cout << "------------------------------------------" <<endl;
-    cout<<"Start Main" << endl;
-    ListInt l;
-    l.push_back(1);
-    l.push_back(2);
-    l.push_back(3);
-    l.push_back(4);
+// int main()
+// {
+//     cout << "------------------------------------------" <<endl;
+//     cout<<"Start Main" << endl;
+//     ListInt l;
+//     l.push_back(1);
+//     l.push_back(2);
+//     l.push_back(3);
+//     l.push_back(4);
     
 
-    ListInt l2;
-    l2.push_back(10);
+//     ListInt l2;
+//     l2.push_back(10);
 
-    for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    {
-		cout << it.get() << endl;
-    }
+//     for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     {
+// 		cout << it.get() << endl;
+//     }
 
-    l.grab_and_append(l2);
+//     l.grab_and_append(l2);
     
-    ListInt::iterator it(l.head());
-    it.next();
-    it.next();
-    l.insert(it,123);
-    it.next();
-    l.erase(it);
-    it.next();
+//     ListInt::iterator it(l.head());
+//     it.next();
+//     it.next();
+//     l.insert(it,123);
+//     it.next();
+//     l.erase(it);
+//     it.next();
     
 
 
 
 
-    cout << endl << "First Show" << endl;
-    for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    {
-		cout << it.get() << endl;
-    }
+//     cout << endl << "First Show" << endl;
+//     for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     {
+// 		cout << it.get() << endl;
+//     }
 
-    // l.pop_back();
-    // l.push_back(5);
+//     // l.pop_back();
+//     // l.push_back(5);
 
-    // cout << endl << "Second Show" << endl;
-    // for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    // {
-	// 	cout << it.get() << endl;
-    // }
+//     // cout << endl << "Second Show" << endl;
+//     // for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     // {
+// 	// 	cout << it.get() << endl;
+//     // }
 
-    // l.reverse();
-    // cout << endl << "Third Show" << endl;
-    // for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    // {
-	// 	cout << it.get() << endl;
-    // }
-    // cout << "End Main" << endl;
-    cout << "------------------------------------------" <<endl;
-    return 0;
-}
+//     // l.reverse();
+//     // cout << endl << "Third Show" << endl;
+//     // for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     // {
+// 	// 	cout << it.get() << endl;
+//     // }
+//     // cout << "End Main" << endl;
+//     cout << "------------------------------------------" <<endl;
+//     return 0;
+// }
