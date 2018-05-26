@@ -95,7 +95,7 @@ int ListInt::iterator::get() const
 {
     cout << "GetFunc C: " << this->_current->value() << endl;
     if(this->valid()){
-        
+
         return this->_current->value();
     }
 }
@@ -133,13 +133,13 @@ ListInt::ListInt():_head(NULL),_tail(NULL),_size(0)
 
 ListInt::~ListInt()
 {
-
-    // for(ListInt::iterator it = head();it.valid();it.next())
-    // {
-    //     Node* node = it._current;
-    //     delete node;
-    // }
     cout << "List D-tor" << endl;
+    for(ListInt::iterator it = head();it.valid();it.next())
+    {
+         Node* node = it._current;
+         cout << "Delete node:" << node << endl;
+         delete node;
+    }
 }
 
 void ListInt::push_back(int val)
@@ -163,14 +163,12 @@ void ListInt::push_back(int val)
 
 bool ListInt::empty() const
 {
-    //cout << this->size() << endl;
     if(this->size() == 0){return true;}
     else{return false;}
 }
 
 size_t ListInt::size() const
 {
-    //cout << "Size(): " << _size << endl;
     return _size;
 }
 
@@ -178,7 +176,7 @@ ListInt::iterator ListInt::head()
 {
     cout << "Init head iterator" << endl;
     cout << "Head: " << _head << endl;
-    return ListInt::iterator(_head); 
+    return ListInt::iterator(_head);
 }
 ListInt::iterator ListInt::tail()
 {
@@ -199,7 +197,38 @@ void ListInt::insert(iterator pos, Node* node)
 
 void ListInt::pop_back()
 {
+    cout << "Pop_back Func. Tail has been pop : " << this->_tail << endl;
+    this->_tail = this->_tail->prev();
+    delete this->_tail->next();
+    this->_tail->next() = NULL;
+}
 
+void ListInt::reverse()
+{
+    cout << "Reverse List" << endl;
+    int counter = 1;
+    Node *tmp;
+    for(ListInt::iterator it1 = head();it1.valid();it1.prev())
+    {
+        tmp = it1._current->next();
+        it1._current->next() = it1._current->prev();
+        it1._current->prev() = tmp; 
+    }
+    tmp = _head;
+    _head = _tail;
+    _tail = tmp;
+}
+
+void ListInt::grab_and_append(ListInt& from)
+{
+    cout << "Grab&Append Func: " << endl;
+    this->_tail->next() = from._head;
+    from._head->prev() = this->_tail;
+    this->_size += from._size;
+    from._size = 0;
+    from._head = NULL;
+    this->_tail = from._tail;
+    from._tail = NULL;
 }
 
 
@@ -207,17 +236,50 @@ void ListInt::pop_back()
 
 int main()
 {
+    cout << "------------------------------------------" <<endl;
+    cout<<"Start Main" << endl;
     ListInt l;
     l.push_back(1);
     l.push_back(2);
-    l.push_back(2);
-    l.push_back(5);
-    cout << "Empty: " << l.empty() << endl;
-    cout << "Size: " << l.size() << endl;
+    l.push_back(3);
+    l.push_back(4);
     
+
+    ListInt l2;
+    l2.push_back(10);
+
     for(ListInt::iterator it(l.head()); it.valid(); it.next())
     {
 		cout << it.get() << endl;
     }
+
+    l.grab_and_append(l2);
+
+
+
+
+    cout << endl << "First Show" << endl;
+    for(ListInt::iterator it(l.head()); it.valid(); it.next())
+    {
+		cout << it.get() << endl;
+    }
+
+    // l.pop_back();
+    // l.push_back(5);
+
+    // cout << endl << "Second Show" << endl;
+    // for(ListInt::iterator it(l.head()); it.valid(); it.next())
+    // {
+	// 	cout << it.get() << endl;
+    // }
+
+    // l.reverse();
+    // cout << endl << "Third Show" << endl;
+    // for(ListInt::iterator it(l.head()); it.valid(); it.next())
+    // {
+	// 	cout << it.get() << endl;
+    // }
+    // cout << "End Main" << endl;
+    cout << "------------------------------------------" <<endl;
     return 0;
 }
