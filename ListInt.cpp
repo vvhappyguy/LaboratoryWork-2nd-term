@@ -7,9 +7,9 @@ using namespace std;
 ListInt::Node::Node(int value)
 {
     cout << "Node C-tor with value: " << value << endl;
-    int _value = value;
-    _prev = NULL;
-    _next = NULL;
+    this->_value = value;
+    this->_prev = NULL;
+    this->_next = NULL;
 }
 
 ListInt::Node::Node()
@@ -21,11 +21,13 @@ ListInt::Node::Node()
 
 int& ListInt::Node::value()
 {
+    cout << "ValueFunc: " << this->_value << " ";
     return this->_value;
 }
 
 int  ListInt::Node::value() const
 {
+    cout << "ValueFunc C: " << this->_value << " ";
     return this->_value;
 }
 
@@ -40,14 +42,13 @@ ListInt::Node*& ListInt::Node::next()
 }
 
 //Iterator Block
-ListInt::iterator::iterator(Node* node){
+ListInt::iterator::iterator(Node* node):_current(node){
     cout << "Iterator C-tor" << endl;
-    Node* _current = node;
 }
 
 ListInt::iterator::~iterator(){
     cout << "Iterator D-tor" << endl;
-    delete _current;
+    _current = NULL;
 }
 
 ListInt::iterator::iterator(){
@@ -58,15 +59,21 @@ ListInt::iterator::iterator(){
 //!!!
 ListInt::iterator::iterator(const iterator& it)
 {
-    Node* _current;
-    cout << "Iterator Copy-tor" << endl;
     this->_current = it._current;
 }
 
 bool ListInt::iterator::valid() const
 {
-    if (_current != NULL){return true;}
-    else {return false;};
+    if (_current != NULL)
+    {
+        cout << "Iterator is valid." << endl;
+        return true;
+    }
+    else
+    {
+        cout << "Iterator is INvalid." << endl;
+        return false;
+    }
 }
 
 bool ListInt::iterator::invalid() const
@@ -77,6 +84,7 @@ bool ListInt::iterator::invalid() const
 
 int& ListInt::iterator::get()
 {
+    cout << "GetFunc: " << this->_current->value()<< " for node:"<< this->_current << endl;
     if (this->valid())
     {
         return this->_current->value();
@@ -85,18 +93,22 @@ int& ListInt::iterator::get()
 
 int ListInt::iterator::get() const
 {
+    cout << "GetFunc C: " << this->_current->value() << endl;
     if(this->valid()){
+        
         return this->_current->value();
     }
 }
 
 void ListInt::iterator::prev()
 {
+    cout << "Prev elem of list" << endl;
     this->_current = this->_current->prev();
 }
 
 void ListInt::iterator::next()
 {
+    cout << "Next elem of list" << endl;
     this->_current = this->_current->next();
 }
 
@@ -133,16 +145,18 @@ ListInt::~ListInt()
 void ListInt::push_back(int val)
 {
     Node* node = new Node(val);
+    node->next() = NULL;
     if (empty()){
+        cout << "Append node: "<< node <<" values _head and _tail for it" << endl;
         this->_head = node;
         this->_tail = node;
         this->_size++;
     }
     else {
-        Node* tn = this->_tail;
-        node->prev() = tn;
-        tn->next() = node;
-        node->next() = NULL;
+        cout << "Append node: " << node << " value _tail for it" << endl;
+        node->prev() = this->_tail;
+        this->_tail->next() = node;
+        this->_tail = node;
         this->_size++;
     }
 }
@@ -162,12 +176,15 @@ size_t ListInt::size() const
 
 ListInt::iterator ListInt::head()
 {
-    ListInt::iterator* it = new ListInt::iterator(_head);
-    return *(it);
+    cout << "Init head iterator" << endl;
+    cout << "Head: " << _head << endl;
+    return ListInt::iterator(_head); 
 }
 ListInt::iterator ListInt::tail()
 {
-    return this->_tail;
+    cout << "Init tail iterator" << endl;
+    cout << "Tail: " << _tail << endl;
+    return ListInt::iterator(_tail);
 }
 
 ListInt::iterator ListInt::insert(iterator pos, int value)
@@ -194,15 +211,13 @@ int main()
     l.push_back(1);
     l.push_back(2);
     l.push_back(2);
-    l.push_back(2);
+    l.push_back(5);
     cout << "Empty: " << l.empty() << endl;
     cout << "Size: " << l.size() << endl;
     
-    for(ListInt::iterator it = l.head(); it.valid(); it.next())
+    for(ListInt::iterator it(l.head()); it.valid(); it.next())
+    {
 		cout << it.get() << endl;
-    //ListInt::iterator it1 = ListInt::iterator();
-    // ListInt::iterator it2 = ListInt::iterator();
-    // cout << it1.valid() << it1.invalid() << endl;
-    //cout << it1.equal(it2) << endl;
+    }
     return 0;
 }

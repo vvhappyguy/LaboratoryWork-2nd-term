@@ -19,6 +19,7 @@ class ListInt
 			Node*& prev();
 			Node*& next();
 		};
+	//public:
 		Node *_head, *_tail;  // Указатели на голову и хвост списка
 		size_t _size;         // количество элементов
 	public:
@@ -37,10 +38,11 @@ class ListInt
 		class iterator // класс итератора списка
 		{
 			private:
-				Node *_current;
+				//Node *_current;
 				iterator(Node* node); // основной конструктор: запрещен для использования вне списка
 				friend class ListInt; // чтобы воспользоваться этим конструктором из ListInt он должен быть объявлен дружественным 
 			public:	
+				Node *_current;
 				iterator();  // default c-tor
 				iterator(const iterator&); // copy c-tor
 				~iterator();
