@@ -284,6 +284,70 @@ ListInt::iterator ListInt::erase(ListInt::iterator pos)
 
 void ListInt::sort()
 {
+    if(this->empty())
+        throw 3;
+    ListInt::iterator* it1 = this->head();
+    size_t it1_count = 1;
+
+    ListInt::iterator* it2 = this->tail();
+    size_t it2_count = this->size();
+
+    size_t mid_size = this->size() / 2 + this->size() % 2;
+
+    size_t counter = 1;
+    for(ListInt::iterator tmp_it = l.head(); tmp_it.valid(); tmp_it.next())
+    {
+        if(counter != mid_size)
+        {
+            counter++;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    do
+    {
+        while(it1.get() < tmp_it.get())
+        {
+            it1.next();
+            it1_count++;
+        }
+
+        while(it2.get() > tmp_it.get())
+        {
+            i2.prev();
+            it2_count--;
+        }
+
+        if(it1_count <= it2_count)
+        {
+            int tmp = it1.value();
+            it1.value() = it2.value();
+            it2.value() = tmp;
+
+            it1_count++;
+            it1.next();
+
+            it2_count--;
+            it2.prev();
+        }
+    } while (it1_count <= it2_count);
+
+    if(it2_count > 0)
+    {
+        ListInt::ListInt* l1 = new ListInt::ListInt(); 
+        //Сделать список c первого по it2_count+1 элемент старого списка, сделать для него .sort()
+    }
+
+    if(it1_count < this->size())
+    {
+        ListInt::ListInt* l2 = new ListInt::ListInt();
+        //Сделать список с it1_count до конца старого списка, сделать для него .sort()
+
+    }
+    
     //cout << "Test Sort" << endl;
 }
 
