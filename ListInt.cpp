@@ -19,44 +19,47 @@ ListInt::Node::Node()
     _next = NULL;
 }
 
-int& ListInt::Node::value()
+int &ListInt::Node::value()
 {
     //cout << "ValueFunc: " << this->_value << " ";
     return this->_value;
 }
 
-int  ListInt::Node::value() const
+int ListInt::Node::value() const
 {
     //cout << "ValueFunc C: " << this->_value << " ";
     return this->_value;
 }
 
-ListInt::Node*& ListInt::Node::prev()
+ListInt::Node *&ListInt::Node::prev()
 {
-    return this->_prev;
+    return this->_prev;    
 }
 
-ListInt::Node*& ListInt::Node::next()
+ListInt::Node *&ListInt::Node::next()
 {
     return this->_next;
 }
 
 //Iterator Block
-ListInt::iterator::iterator(Node* node):_current(node){
+ListInt::iterator::iterator(Node *node) : _current(node)
+{
     //cout << "Iterator C-tor" << endl;
 }
 
-ListInt::iterator::~iterator(){
+ListInt::iterator::~iterator()
+{
     //cout << "Iterator D-tor" << endl;
     _current = NULL;
 }
 
-ListInt::iterator::iterator(){
+ListInt::iterator::iterator()
+{
     //cout << "Iterator Default C-tor" << endl;
     _current = NULL;
 }
 
-ListInt::iterator::iterator(const iterator& it)
+ListInt::iterator::iterator(const iterator &it)
 {
     this->_current = it._current;
 }
@@ -77,34 +80,41 @@ bool ListInt::iterator::valid() const
 
 bool ListInt::iterator::invalid() const
 {
-    if(_current == NULL) {return true;}
-    else {return false;}
+    if (_current == NULL)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
-int& ListInt::iterator::get()
+int &ListInt::iterator::get()
 {
     //cout << "GetFunc: " << this->_current->value()<< " for node:"<< this->_current << endl;
-    if (this->valid())
-    {
-        return this->_current->value();
-    }
+    return this->_current->value();
 }
 
 int ListInt::iterator::get() const
 {
     //cout << "GetFunc C: " << this->_current->value() << endl;
-    if(this->valid()){
-
-        return this->_current->value();
-    }
+    return this->_current->value();
 }
 
 void ListInt::iterator::prev()
 {
     // if(this->_current->prev()!=NULL)
     // {
-        //cout << "Prev elem of list" << endl;
+    //cout << "Prev elem of list" << endl;
+    if(this->valid())
+    {
         this->_current = this->_current->prev();
+    }
+    else
+    {
+        throw 2;
+    }
     // }
 }
 
@@ -112,24 +122,31 @@ void ListInt::iterator::next()
 {
     // if(this->_current->next()!=NULL)
     // {
-        //cout << "Next elem of list" << endl;
+    //cout << "Next elem of list" << endl;
+    if(this->valid())
+    {
         this->_current = this->_current->next();
+    }
+    else
+    {
+        throw 1;
+    }
     // }
 }
 
-bool ListInt::iterator::equal(const iterator& other) const
+bool ListInt::iterator::equal(const iterator &other) const
 {
-    if(this->_current->value() == other._current->value()){
+    if (this->_current->value() == other._current->value())
+    {
         return true;
-    } else {
+    }
+    else
+    {
         return false;
     }
 }
 
-
-
-
-ListInt::ListInt():_head(NULL),_tail(NULL),_size(0)
+ListInt::ListInt() : _head(NULL), _tail(NULL), _size(0)
 {
     //cout << "List Default C-tor" << endl;
     //cout << " head:" << _head << ", tail:" << _tail << endl;
@@ -138,10 +155,10 @@ ListInt::ListInt():_head(NULL),_tail(NULL),_size(0)
 
 ListInt::~ListInt()
 {
-    cout << "List D-tor" << endl;
-    for(ListInt::iterator it = head();it.valid();it.next())
+    //cout << "List D-tor" << endl;
+    for (ListInt::iterator it = head(); it.valid(); it.next())
     {
-        Node* node = it._current;
+        Node *node = it._current;
         //cout << "Delete node:" << node << endl;
         delete node;
     }
@@ -149,15 +166,17 @@ ListInt::~ListInt()
 
 void ListInt::push_back(int val)
 {
-    Node* node = new Node(val);
+    Node *node = new Node(val);
     node->next() = NULL;
-    if (empty()){
+    if (empty())
+    {
         //cout << "Append node: "<< node <<" values _head and _tail for it" << endl;
         this->_head = node;
         this->_tail = node;
         this->_size++;
     }
-    else {
+    else
+    {
         //cout << "Append node: " << node << " value _tail for it" << endl;
         node->prev() = this->_tail;
         this->_tail->next() = node;
@@ -168,8 +187,14 @@ void ListInt::push_back(int val)
 
 bool ListInt::empty() const
 {
-    if(this->size() == 0){return true;}
-    else{return false;}
+    if (this->size() == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 size_t ListInt::size() const
@@ -193,27 +218,38 @@ ListInt::iterator ListInt::tail()
 void ListInt::pop_back()
 {
     //cout << "Pop_back Func. Tail has been pop : " << this->_tail << endl;
-    this->_tail = this->_tail->prev();
-    delete this->_tail->next();
-    this->_tail->next() = NULL;
+    if(this->size() > 1)
+    {
+        this->_tail = this->_tail->prev();
+        delete this->_tail->next();
+        this->_size -= 1;
+    }
+    else
+    {
+        ListInt::Node* tmp  = this->_tail;
+        delete tmp;
+        this->_tail = NULL;
+        this->_head = NULL;
+        this->_size = 0;
+    }
 }
 
 void ListInt::reverse()
 {
     //cout << "Reverse List" << endl;
     Node *tmp;
-    for(ListInt::iterator it1 = head();it1.valid();it1.prev())
+    for (ListInt::iterator it1 = head(); it1.valid(); it1.prev())
     {
         tmp = it1._current->next();
         it1._current->next() = it1._current->prev();
-        it1._current->prev() = tmp; 
+        it1._current->prev() = tmp;
     }
     tmp = _head;
     _head = _tail;
     _tail = tmp;
 }
 
-void ListInt::grab_and_append(ListInt& from)
+void ListInt::grab_and_append(ListInt &from)
 {
     //cout << "Grab&Append Func: " << endl;
     this->_tail->next() = from._head;
@@ -240,17 +276,16 @@ ListInt::iterator ListInt::erase(ListInt::iterator pos)
 {
     pos._current->prev()->next() = pos._current->next();
     pos._current->next()->prev() = pos._current->prev();
-    _size-=1;
+    _size -= 1;
     pos._current = NULL;
     //cout << "Erase Func" << endl;
     return pos;
 }
 
-void sort()
+void ListInt::sort()
 {
-    cout << "Test Sort" << endl;
+    //cout << "Test Sort" << endl;
 }
-
 
 // int main()
 // {
@@ -261,7 +296,6 @@ void sort()
 //     l.push_back(2);
 //     l.push_back(3);
 //     l.push_back(4);
-    
 
 //     ListInt l2;
 //     l2.push_back(10);
@@ -272,7 +306,7 @@ void sort()
 //     }
 
 //     l.grab_and_append(l2);
-    
+
 //     ListInt::iterator it(l.head());
 //     it.next();
 //     it.next();
@@ -280,10 +314,6 @@ void sort()
 //     it.next();
 //     l.erase(it);
 //     it.next();
-    
-
-
-
 
 //     cout << endl << "First Show" << endl;
 //     for(ListInt::iterator it(l.head()); it.valid(); it.next())
