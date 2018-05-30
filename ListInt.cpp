@@ -286,16 +286,17 @@ void ListInt::sort()
 {
     if(this->empty())
         throw 3;
-    ListInt::iterator* it1 = this->head();
+    ListInt::iterator it1 = this->head();
     size_t it1_count = 1;
 
-    ListInt::iterator* it2 = this->tail();
+    ListInt::iterator it2 = this->tail();
     size_t it2_count = this->size();
 
     size_t mid_size = this->size() / 2 + this->size() % 2;
 
     size_t counter = 1;
-    for(ListInt::iterator tmp_it = l.head(); tmp_it.valid(); tmp_it.next())
+    ListInt::iterator tmp_it = this->head();
+    for(; tmp_it.valid(); tmp_it.next())
     {
         if(counter != mid_size)
         {
@@ -317,15 +318,15 @@ void ListInt::sort()
 
         while(it2.get() > tmp_it.get())
         {
-            i2.prev();
+            it2.prev();
             it2_count--;
         }
 
         if(it1_count <= it2_count)
         {
-            int tmp = it1.value();
-            it1.value() = it2.value();
-            it2.value() = tmp;
+            int tmp = it1.get();
+            it1.get() = it2.get();
+            it2.get() = tmp;
 
             it1_count++;
             it1.next();
@@ -337,15 +338,37 @@ void ListInt::sort()
 
     if(it2_count > 0)
     {
-        ListInt::ListInt* l1 = new ListInt::ListInt(); 
+        ListInt* l1 = new ListInt(); 
         //Сделать список c первого по it2_count+1 элемент старого списка, сделать для него .sort()
+        int counter = 1;
+        for(ListInt::iterator tmp_it = this->head(); tmp_it.valid(); tmp_it.next())
+        {
+            if(counter > it2_count + 1)
+            {
+                break;
+            }
+            l1->push_back(tmp_it.get());
+            counter++;
+        }
+        l1->sort();
+        delete l1;
     }
 
     if(it1_count < this->size())
     {
-        ListInt::ListInt* l2 = new ListInt::ListInt();
+        ListInt* l2 = new ListInt();
+        int counter = 1;
         //Сделать список с it1_count до конца старого списка, сделать для него .sort()
-
+        for(ListInt::iterator tmp_it = this->head(); tmp_it.valid(); tmp_it.next())
+        {
+            if(counter > it1_count)
+            {
+                counter++;
+                l2->push_back(tmp_it.get());
+            }
+        }
+        l2->sort();
+        delete l2;
     }
     
     //cout << "Test Sort" << endl;
@@ -356,30 +379,20 @@ void ListInt::sort()
 //     cout << "------------------------------------------" <<endl;
 //     cout<<"Start Main" << endl;
 //     ListInt l;
-//     l.push_back(1);
+//     l.push_back(10);
 //     l.push_back(2);
-//     l.push_back(3);
+//     l.push_back(8);
 //     l.push_back(4);
 
-//     ListInt l2;
-//     l2.push_back(10);
-
+//     cout << endl << "First Show" << endl;
 //     for(ListInt::iterator it(l.head()); it.valid(); it.next())
 //     {
 // 		cout << it.get() << endl;
 //     }
 
-//     l.grab_and_append(l2);
+//     l.sort();
 
-//     ListInt::iterator it(l.head());
-//     it.next();
-//     it.next();
-//     l.insert(it,123);
-//     it.next();
-//     l.erase(it);
-//     it.next();
-
-//     cout << endl << "First Show" << endl;
+//     cout << endl << "Second Show" << endl;
 //     for(ListInt::iterator it(l.head()); it.valid(); it.next())
 //     {
 // 		cout << it.get() << endl;
