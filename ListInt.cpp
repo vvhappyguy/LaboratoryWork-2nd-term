@@ -1,6 +1,5 @@
 #include "ListInt.h"
 #include <iostream>
-#include "stdlib.h"
 
 using namespace std;
 
@@ -252,14 +251,17 @@ void ListInt::reverse()
 
 void ListInt::grab_and_append(ListInt &from)
 {
-    //cout << "Grab&Append Func: " << endl;
-    this->_tail->next() = from._head;
-    from._head->prev() = this->_tail;
-    this->_size += from._size;
-    from._size = 0;
-    from._head = NULL;
-    this->_tail = from._tail;
-    from._tail = NULL;
+    if(from.size() > 0)
+    {
+        //cout << "Grab&Append Func: " << endl;
+        this->_tail->next() = from._head;
+        from._head->prev() = this->_tail;
+        this->_size += from._size;
+        from._size = 0;
+        from._head = NULL;
+        this->_tail = from._tail;
+        from._tail = NULL;
+    }
 }
 
 ListInt::iterator ListInt::insert(ListInt::iterator pos, int value)
@@ -384,8 +386,7 @@ void ListInt::cut_and_push(ListInt& list,iterator pos)
 	}
 	else
 	{
-		cerr << "ERROR C_A_P" << endl;
-		exit(64);
+		throw 4;
 	};
 }
 void ListInt::push_back(Node *node)
@@ -441,8 +442,7 @@ ListInt::Node* ListInt::cut(iterator pos)
 	}
 	else
 	{
-		cerr << "ERROR CUT" << endl; 
-		exit(32);
+		throw 4;
 	};	
 }
 void ListInt::Node::nullNP()
@@ -472,7 +472,7 @@ void ListInt::sort()
             }
             else
             {
-                pos--;
+                pos.prev();
             };
         }
        
