@@ -18,6 +18,7 @@ class ListInt
 			int  value() const;
 			Node*& prev();
 			Node*& next();
+			void nullNP();
 		};
 	//public:
 		Node *_head, *_tail;  // Указатели на голову и хвост списка
@@ -59,6 +60,11 @@ class ListInt
 
 				bool equal(const iterator& other) const;
 		};
+
+		Node* cut(iterator pos);
+		void push_back(Node *node);
+		void cut_and_push(ListInt& list,iterator pos);
+		
 
 		// фабрики итераторов
 		iterator head();
