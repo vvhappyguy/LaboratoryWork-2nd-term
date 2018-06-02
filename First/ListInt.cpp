@@ -285,99 +285,10 @@ ListInt::iterator ListInt::erase(ListInt::iterator pos)
     return pos;
 }
 
-// void ListInt::sort()
-// {
-//     if(this->empty())
-//         return;
-//     ListInt::iterator it1 = this->head();
-//     size_t it1_count = 1;
 
-//     ListInt::iterator it2 = this->tail();
-//     size_t it2_count = this->size();
-
-//     size_t mid_size = this->size() / 2 + this->size() % 2;
-
-//     size_t counter = 1;
-//     ListInt::iterator tmp_it = this->head();
-//     for(; tmp_it.valid(); tmp_it.next())
-//     {
-//         if(counter != mid_size)
-//         {
-//             counter++;
-//         }
-//         else
-//         {
-//             break;
-//         }
-//     }
-
-//     do
-//     {
-//         while(it1.get() < tmp_it.get())
-//         {
-//             it1.next();
-//             it1_count++;
-//         }
-
-//         while(it2.get() > tmp_it.get())
-//         {
-//             it2.prev();
-//             it2_count--;
-//         }
-
-//         if(it1_count <= it2_count)
-//         {
-//             int tmp = it1.get();
-//             it1.get() = it2.get();
-//             it2.get() = tmp;
-
-//             it1_count++;
-//             it1.next();
-
-//             it2_count--;
-//             it2.prev();
-//         }
-//     } while (it1_count <= it2_count);
-
-//     if(it2_count > 0)
-//     {
-//         ListInt* l1 = new ListInt(); 
-//         //Сделать список c первого по it2_count+1 элемент старого списка, сделать для него .sort()
-//         int counter1 = 1;
-//         for(ListInt::iterator tmp_it = this->head(); tmp_it.valid(); tmp_it.next())
-//         {
-//             if(counter1 > it2_count + 1)
-//             {
-//                 break;
-//             }
-//             l1->push_back(tmp_it.get());
-//             counter1++;
-//         }
-//         l1->sort();
-//     }
-
-//     if(it1_count < this->size())
-//     {
-//         ListInt* l2 = new ListInt();
-//         int counter2 = 1;
-//         //Сделать список с it1_count до конца старого списка, сделать для него .sort()
-//         for(ListInt::iterator tmp_it = this->head(); tmp_it.valid(); tmp_it.next())
-//         {
-//             if(counter2 > it1_count)
-//             {
-//                 counter2++;
-//                 l2->push_back(tmp_it.get());
-//             }
-//         }
-//         l2->sort();
-//     }
-    
-//     //cout << "Test Sort" << endl;
-// }
-
+// QSort methods
 void ListInt::cut_and_push(ListInt& list,iterator pos)
 {
-	//cout << "C_A_P" << endl;
 	if(pos.valid())
 	{
 		Node *tmp;
@@ -389,9 +300,9 @@ void ListInt::cut_and_push(ListInt& list,iterator pos)
 		throw 4;
 	};
 }
+
 void ListInt::push_back(Node *node)
 {
-	//cout << "PB_N" << endl;
 	node->next() = NULL;
 
 	if(_head!=NULL)
@@ -409,9 +320,9 @@ void ListInt::push_back(Node *node)
 	_size++;
 }
 
+// Function for cutting node from ListInt by iterator
 ListInt::Node* ListInt::cut(iterator pos)
 {
-	//cout << "CUT" << endl;
 	if(pos.valid())
 	{	
 		Node *tmp = pos._current;
@@ -437,7 +348,8 @@ ListInt::Node* ListInt::cut(iterator pos)
 			this->_head = NULL;
 		}
 		this->_size--;
-		tmp->nullNP();
+		tmp->prev() = NULL;
+        tmp->next() = NULL;
 		return tmp;
 	}
 	else
@@ -445,20 +357,14 @@ ListInt::Node* ListInt::cut(iterator pos)
 		throw 4;
 	};	
 }
-void ListInt::Node::nullNP()
-{
-		this->prev() = NULL;
-		this->next() = NULL;
-}
 
 void ListInt::sort()
 {
-    //cout << "q_sort" << endl;
-    if(this->_size>1)
+    if(this->_size > 1)
     {
         ListInt tmp_l;
-        iterator pos;
-        Node *fix, *tmp;
+        ListInt::iterator pos;
+        ListInt::Node *fix, *tmp;
         fix = this->cut(this->tail());
         pos = this->tail();
    
@@ -484,46 +390,46 @@ void ListInt::sort()
     }
 }
 
-int main()
-{
-    cout << "------------------------------------------" <<endl;
-    cout<<"Start Main" << endl;
-    ListInt l;
-    l.push_back(10);
-    l.push_back(2);
-    l.push_back(8);
-    l.push_back(4);
+// int main()
+// {
+//     cout << "------------------------------------------" <<endl;
+//     cout<<"Start Main" << endl;
+//     ListInt l;
+//     l.push_back(10);
+//     l.push_back(2);
+//     l.push_back(8);
+//     l.push_back(4);
 
-    cout << endl << "First Show" << endl;
-    for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    {
-		cout << it.get() << endl;
-    }
+//     cout << endl << "First Show" << endl;
+//     for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     {
+// 		cout << it.get() << endl;
+//     }
 
-    l.sort();
+//     l.sort();
 
-    cout << endl << "Second Show" << endl;
-    for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    {
-		cout << it.get() << endl;
-    }
+//     cout << endl << "Second Show" << endl;
+//     for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     {
+// 		cout << it.get() << endl;
+//     }
 
-    // l.pop_back();
-    // l.push_back(5);
+//     // l.pop_back();
+//     // l.push_back(5);
 
-    // cout << endl << "Second Show" << endl;
-    // for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    // {
-	// 	cout << it.get() << endl;
-    // }
+//     // cout << endl << "Second Show" << endl;
+//     // for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     // {
+// 	// 	cout << it.get() << endl;
+//     // }
 
-    // l.reverse();
-    // cout << endl << "Third Show" << endl;
-    // for(ListInt::iterator it(l.head()); it.valid(); it.next())
-    // {
-	// 	cout << it.get() << endl;
-    // }
-    // cout << "End Main" << endl;
-    cout << "------------------------------------------" <<endl;
-    return 0;
-}
+//     // l.reverse();
+//     // cout << endl << "Third Show" << endl;
+//     // for(ListInt::iterator it(l.head()); it.valid(); it.next())
+//     // {
+// 	// 	cout << it.get() << endl;
+//     // }
+//     // cout << "End Main" << endl;
+//     cout << "------------------------------------------" <<endl;
+//     return 0;
+// }

@@ -18,7 +18,6 @@ class ListInt
 			int  value() const;
 			Node*& prev();
 			Node*& next();
-			void nullNP();
 		};
 	//public:
 		Node *_head, *_tail;  // Указатели на голову и хвост списка
