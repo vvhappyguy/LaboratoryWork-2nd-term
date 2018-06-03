@@ -277,8 +277,21 @@ ListInt::iterator ListInt::insert(ListInt::iterator pos, int value)
 
 ListInt::iterator ListInt::erase(ListInt::iterator pos)
 {
-    pos._current->prev()->next() = pos._current->next();
-    pos._current->next()->prev() = pos._current->prev();
+    if(pos._current->prev() == NULL && pos._current->next() != NULL)
+    {
+        pos._current->next()->prev() = NULL;
+        this->_head = pos._current->next();
+    }
+    else if (pos._current->prev() != NULL && pos._current->next()  == NULL)
+    {
+        pos._current->prev()->next() = NULL;
+        this->_tail = pos._current->prev();
+    }
+    else if (pos._current->prev() != NULL && pos._current->next() != NULL)
+    {
+        pos._current->prev()->next() = pos._current->next();
+        pos._current->next()->prev() = pos._current->prev();
+    }
     _size -= 1;
     pos._current = NULL;
     //cout << "Erase Func" << endl;
@@ -287,6 +300,7 @@ ListInt::iterator ListInt::erase(ListInt::iterator pos)
 
 
 // QSort methods
+
 void ListInt::cut_and_push(ListInt& list,iterator pos)
 {
 	if(pos.valid())
@@ -301,6 +315,8 @@ void ListInt::cut_and_push(ListInt& list,iterator pos)
 	};
 }
 
+// Push back node to end of elem
+// We may use insert() else
 void ListInt::push_back(Node *node)
 {
 	node->next() = NULL;
@@ -362,19 +378,20 @@ void ListInt::sort()
 {
     if(this->_size > 1)
     {
-        ListInt tmp_l;
-        ListInt::iterator pos;
-        ListInt::Node *fix, *tmp;
-        fix = this->cut(this->tail());
-        pos = this->tail();
+        ListInt tmp_l; // Первая половина
+        ListInt::iterator pos; // итератор для границы списков
+        ListInt::Node *base, *tmp; // 
+        base = this->cut(this->tail()); // Node of tail
+        pos = this->tail(); // Iterator
    
+        // Пробегаем по всему списку
         while(pos.valid())
         {  
-            if(pos._current->value() >= fix->value())
+            if(pos._current->value() >= base->value()) //  
             {
                 tmp = pos._current->prev();
-                this->cut_and_push(tmp_l,pos);
-                pos._current = tmp;
+                this->cut_and_push(tmp_l,pos); // Adding new nodes to new tmp_l ListInt
+                pos._current = tmp; 
             }
             else
             {
@@ -382,11 +399,11 @@ void ListInt::sort()
             };
         }
        
-        this->sort();
-        tmp_l.sort();
+        this->sort(); //Sort Main
+        tmp_l.sort(); //Sort new
        
-        this->push_back(fix);
-        this->grab_and_append(tmp_l);
+        this->push_back(base); // Push biggest elem to Out ListInt
+        this->grab_and_append(tmp_l); // Connect two lists
     }
 }
 
