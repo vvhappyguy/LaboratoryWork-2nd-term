@@ -44,7 +44,7 @@ void Canvas::clear()
 
 int Canvas::rows() const{return this->_rows;}
 int Canvas::cols() const{return this->_cols;}
-/*
+
 void Canvas::draw(ostream& ostr)
 {
 	logger(LOG_INFO,"Draw Canvas(%d) to some stream", this);
@@ -67,7 +67,7 @@ void Canvas::checkBounds(int row, int col) const
 		else if(row < rows() || col < cols())
 		{
 			logger(LOG_WARN,"Value(s)(%d, %d)  out if canvas.", row, col);
-			//cout << "Bad value(s) " << row << ", " << cols << endl;
+			cout <<  "Bad value(s) " << row << ", " << col << endl;
 			throw 1;
 		}
 		else
@@ -103,4 +103,4 @@ Canvas& Canvas::operator=(const Canvas& copy)
 
 	return *this;
 }
-*/
+
