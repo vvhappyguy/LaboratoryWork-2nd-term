@@ -27,7 +27,7 @@ class GItem
 class GFactory
 {
 	public:
-		typedef GItem* (Factory)();
+		typedef GItem* (*Factory)();
 	private:
 	struct Registry
 	{
