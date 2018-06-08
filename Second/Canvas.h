@@ -19,7 +19,7 @@ class Canvas
 		int rows() const; // Getter for rows
 		int cols() const; // Getter for cols
 		char& pixel(int row, int col); // Get and change pixel
-		char pixel(int row, int col) const; // Get pixel
+		//char pixel(int row, int col) const; // Get pixel
 	private:
 		char* ROW(size_t r); // Get row
 		const char* ROW(size_t r) const; // Get row

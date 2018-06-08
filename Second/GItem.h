@@ -130,7 +130,8 @@ class GPicture
 		size_t numItems() const;
 		GItem*& at(size_t pos);
 		const GItem* at(size_t pos) const;
-
+		
+		void push_back(GItem* Item);
 		void add(GItem* item, size_t pos = 0);
 		void del(size_t pos = 0);
 };
