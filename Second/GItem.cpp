@@ -191,7 +191,7 @@ void GLine::draw(Canvas& canvas)
 	{
 		canvas.pixel(x1,y1) = '*';
 		int error2 = error*2;
-		if(error > -delY)
+		if(error2 > -delY)
 		{
 			error -= delY;
 			x1 += zX;
@@ -272,11 +272,15 @@ int& GCircle::r(){return this->_r;}
 //GPicture realisation
 GPicture::GPicture():_head(NULL){logger(LOG_INFO,"Default C-tor of Picture");}
 GPicture::GPicture(const GPicture& other):_head(other._head){logger(LOG_INFO,"Copy C-tor");}
+
 void GPicture::save(const char * filename) const
 {
 	std::ofstream ostr(filename);
 	if(!ostr.is_open())
+	{
+		logger(LOG_WARN, "Can't open filename for GPict.save() : %s",filename);
 		throw 11;
+	}
 	Node* it = _head;
 	while(it != NULL)
 	{
@@ -284,6 +288,7 @@ void GPicture::save(const char * filename) const
 		it = it->next;
 	}
 	ostr.close();
+	logger(LOG_INFO, "Saved GPicture to file: %s", filename);
 }
 
 void GPicture::draw(Canvas& canvas) const
@@ -294,6 +299,7 @@ void GPicture::draw(Canvas& canvas) const
 		it->item->draw(canvas);
 		it = it->next;
 	}
+	logger(LOG_INFO, "Draw GPicture to Canvas(%d)", &canvas);
 }
 
 size_t GPicture::numItems()const
@@ -307,6 +313,7 @@ size_t GPicture::numItems()const
 			it = it->next;
 			count++;
 		}
+	logger(LOG_INFO, "Counted len %d of GPicture list", count);
 	return count;
 	}
 }
@@ -344,6 +351,7 @@ void GPicture::push_back(GItem* Item)
 	{
 		_head = tmp;
 	}
+	logger(LOG_INFO, "PushBack GItem to GPicture");
 }
 
 void GPicture::load(const char* filename)
@@ -370,6 +378,7 @@ void GPicture::load(const char* filename)
 			throw 14;
 	}
 	istr.close();
+	logger(LOG_INFO,"Loaded from file %s", filename);
 }
 
 GPicture::~GPicture()
@@ -380,7 +389,78 @@ GPicture::~GPicture()
 		delete _head;
 		_head = it;
 	}
+	logger(LOG_INFO,"GPicture D-tor");
 }
 
-void GPicture::add(GItem* Item, size_t pos){}
-void GPicture::del(size_t pos){}
+// void GPicture::add(GItem* Item, size_t pos)
+// {
+// 	if(pos < 0 || pos > this->numItems())
+// 	{
+// 		logger(LOG_WARN,"Bad value %d in GPicture.add()",pos);
+// 		throw 15;
+// 	}
+// 	if(pos == 0)
+// 	{
+// 		Node* node = new Node();
+// 		node->next = this->_head;
+// 		this->_head = node;
+// 	}
+// 	else
+// 	{
+// 		int count = 0;
+// 		Node* tmp = this->_head;
+// 		while(count < pos)
+// 		{
+// 			if(count != pos - 1)
+// 			{
+// 				tmp = tmp->next;
+// 				count++;
+// 			}
+// 			else
+// 			{
+// 				Node* node = new Node();
+// 				Node* tmp1 = tmp->next;
+// 				tmp->next = node;
+// 				node->next = tmp1;
+// 			}
+// 		}
+// 	}
+// 	logger(LOG_INFO,"Added GItem to pos(%d)",pos);
+// }
+
+void GPicture::del(size_t pos)
+{
+    if (pos > this->numItems())
+        throw 19;
+    Node * it = _head;
+    if (pos == 0)
+    {
+        if (it->next)
+        {
+            _head = it->next;
+            delete it;
+            return;
+        }
+        else
+        {
+            _head = NULL;
+            return;
+        }
+    }
+    for (int i = 0; i < pos - 1; i++)
+    {
+        it = it->next;
+    }
+    Node * it1 = it->next;
+    if (it1->next)
+    {
+        Node * it2 = it1->next;
+        delete it1;
+        it->next = it2;
+    }
+    else
+    {
+        delete it1;
+        it->next = NULL;
+    }
+}

@@ -1,73 +1,288 @@
-Fri Jun  8 20:26:06 2018   [INFO ] Canvas(398742976) C-tor with values(rows:70, cols:70).
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor of Picture
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor of GFactory
-Fri Jun  8 20:26:06 2018   [INFO ] GCircle Factory
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor of GItem
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor of GCircle
-Fri Jun  8 20:26:06 2018   [INFO ] Restored GCircle
-Fri Jun  8 20:26:06 2018   [INFO ] GLine Factory
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor of GItem
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor GLine
-Fri Jun  8 20:26:06 2018   [INFO ] Restored GLine from file
-Fri Jun  8 20:26:06 2018   [INFO ] GPixel factory
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor of GItem
-Fri Jun  8 20:26:06 2018   [INFO ] Default C-tor of GPixel
-Fri Jun  8 20:26:06 2018   [INFO ] Restore Pixel from file
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(15, 25)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(15, 5)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(15, 25)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(15, 5)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(17, 24)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(17, 6)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(13, 24)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(13, 6)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(19, 23)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(19, 7)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(11, 23)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(11, 7)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(21, 22)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(21, 8)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(9, 22)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(9, 8)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(23, 21)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(23, 9)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(7, 21)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(7, 9)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(25, 20)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(25, 10)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(5, 20)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(5, 10)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(26, 18)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(26, 12)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(4, 18)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(4, 12)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(27, 16)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(27, 14)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(3, 16)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(3, 14)  out if canvas.
-Fri Jun  8 20:26:06 2018   [INFO ] Drawing circle. R = 10 with center:(15, 15)
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(30, 40)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(10, 20)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(11, 21)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(12, 22)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(13, 23)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(14, 24)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(15, 25)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(16, 26)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(17, 27)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(18, 28)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(19, 29)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(20, 30)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(21, 31)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(22, 32)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(23, 33)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(24, 34)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(25, 35)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(26, 36)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(27, 37)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(28, 38)  out if canvas.
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(29, 39)  out if canvas.
-Fri Jun  8 20:26:06 2018   [INFO ] Draw line from (10,20) to (30,40)
-Fri Jun  8 20:26:06 2018   [INFO ] Draw Pixel at(5,40)
-Fri Jun  8 20:26:06 2018   [WARN ] Value(s)(5, 40)  out if canvas.
-Fri Jun  8 20:26:06 2018   [INFO ] Draw Canvas(398742976) to some stream
+Fri Jun  8 22:32:55 2018   [INFO ] Canvas(-394637344) C-tor with values(rows:70, cols:70).
+Fri Jun  8 22:32:55 2018   [INFO ] C-tor with values: 20, 20
+Fri Jun  8 22:32:55 2018   [INFO ] C-tor of GPixel with values: 20 20 (
+Fri Jun  8 22:32:55 2018   [INFO ] C-tor with values: 5, 3
+Fri Jun  8 22:32:55 2018   [INFO ] C-tor GLine with values:(5,3) to (66,66)
+Fri Jun  8 22:32:55 2018   [INFO ] C-tor with values: 35, 35
+Fri Jun  8 22:32:55 2018   [INFO ] C-tor GCircle with values 35, 35, 10
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:32:55 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:32:55 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:32:55 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:32:55 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw line from (5,3) to (66,66)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw GPicture to Canvas(-394637344)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw Canvas(-394637344) to some stream
+Fri Jun  8 22:32:55 2018   [INFO ] Circle saved
+Fri Jun  8 22:32:55 2018   [INFO ] Save Line to file
+Fri Jun  8 22:32:55 2018   [INFO ] Save Pixel to file
+Fri Jun  8 22:32:55 2018   [INFO ] Saved GPicture to file: txt.txt
+Fri Jun  8 22:32:55 2018   [INFO ] Canvas(-394637344) cleared
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of GFactory
+Fri Jun  8 22:32:55 2018   [INFO ] GCircle Factory
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of GCircle
+Fri Jun  8 22:32:55 2018   [INFO ] Restored GCircle
+Fri Jun  8 22:32:55 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:32:55 2018   [INFO ] GLine Factory
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor GLine
+Fri Jun  8 22:32:55 2018   [INFO ] Restored GLine from file
+Fri Jun  8 22:32:55 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:32:55 2018   [INFO ] GPixel factory
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:32:55 2018   [INFO ] Default C-tor of GPixel
+Fri Jun  8 22:32:55 2018   [INFO ] Restore Pixel from file
+Fri Jun  8 22:32:55 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:32:55 2018   [INFO ] Loaded from file txt.txt
+Fri Jun  8 22:32:55 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw line from (5,3) to (66,66)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw GPicture to Canvas(-394637344)
+Fri Jun  8 22:32:55 2018   [INFO ] Draw Canvas(-394637344) to some stream
+Fri Jun  8 22:32:55 2018   [INFO ] GPicture D-tor
+Fri Jun  8 22:32:55 2018   [INFO ] GPicture D-tor
+Fri Jun  8 22:34:56 2018   [INFO ] Canvas(-2132847248) C-tor with values(rows:70, cols:70).
+Fri Jun  8 22:34:56 2018   [INFO ] C-tor with values: 20, 20
+Fri Jun  8 22:34:56 2018   [INFO ] C-tor of GPixel with values: 20 20 (
+Fri Jun  8 22:34:56 2018   [INFO ] C-tor with values: 50, 54
+Fri Jun  8 22:34:56 2018   [INFO ] C-tor GLine with values:(50,54) to (32,3)
+Fri Jun  8 22:34:56 2018   [INFO ] C-tor with values: 35, 35
+Fri Jun  8 22:34:56 2018   [INFO ] C-tor GCircle with values 35, 35, 10
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:34:56 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:34:56 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:34:56 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:34:56 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw line from (50,54) to (32,3)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw GPicture to Canvas(-2132847248)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw Canvas(-2132847248) to some stream
+Fri Jun  8 22:34:56 2018   [INFO ] Circle saved
+Fri Jun  8 22:34:56 2018   [INFO ] Save Line to file
+Fri Jun  8 22:34:56 2018   [INFO ] Save Pixel to file
+Fri Jun  8 22:34:56 2018   [INFO ] Saved GPicture to file: txt.txt
+Fri Jun  8 22:34:56 2018   [INFO ] Canvas(-2132847248) cleared
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of GFactory
+Fri Jun  8 22:34:56 2018   [INFO ] GCircle Factory
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of GCircle
+Fri Jun  8 22:34:56 2018   [INFO ] Restored GCircle
+Fri Jun  8 22:34:56 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:34:56 2018   [INFO ] GLine Factory
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor GLine
+Fri Jun  8 22:34:56 2018   [INFO ] Restored GLine from file
+Fri Jun  8 22:34:56 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:34:56 2018   [INFO ] GPixel factory
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:34:56 2018   [INFO ] Default C-tor of GPixel
+Fri Jun  8 22:34:56 2018   [INFO ] Restore Pixel from file
+Fri Jun  8 22:34:56 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:34:56 2018   [INFO ] Loaded from file txt.txt
+Fri Jun  8 22:34:56 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw line from (50,54) to (32,3)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw GPicture to Canvas(-2132847248)
+Fri Jun  8 22:34:56 2018   [INFO ] Draw Canvas(-2132847248) to some stream
+Fri Jun  8 22:34:56 2018   [INFO ] GPicture D-tor
+Fri Jun  8 22:34:56 2018   [INFO ] GPicture D-tor
+Fri Jun  8 22:37:49 2018   [INFO ] Canvas(-904227952) C-tor with values(rows:70, cols:70).
+Fri Jun  8 22:37:49 2018   [INFO ] C-tor with values: 20, 20
+Fri Jun  8 22:37:49 2018   [INFO ] C-tor of GPixel with values: 20 20 (
+Fri Jun  8 22:37:49 2018   [INFO ] C-tor with values: 50, 54
+Fri Jun  8 22:37:49 2018   [INFO ] C-tor GLine with values:(50,54) to (32,3)
+Fri Jun  8 22:37:49 2018   [INFO ] C-tor with values: 35, 35
+Fri Jun  8 22:37:49 2018   [INFO ] C-tor GCircle with values 35, 35, 10
+Fri Jun  8 22:37:49 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:37:49 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:37:49 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:37:49 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:37:49 2018   [INFO ] Counted len 2 of GPicture list
+Fri Jun  8 22:37:49 2018   [INFO ] Draw line from (50,54) to (32,3)
+Fri Jun  8 22:37:49 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 22:37:49 2018   [INFO ] Draw GPicture to Canvas(-904227952)
+Fri Jun  8 22:37:49 2018   [INFO ] Draw Canvas(-904227952) to some stream
+Fri Jun  8 22:37:49 2018   [INFO ] Save Line to file
+Fri Jun  8 22:37:49 2018   [INFO ] Save Pixel to file
+Fri Jun  8 22:37:49 2018   [INFO ] Saved GPicture to file: txt.txt
+Fri Jun  8 22:37:49 2018   [INFO ] Canvas(-904227952) cleared
+Fri Jun  8 22:37:49 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:37:49 2018   [INFO ] Default C-tor of GFactory
+Fri Jun  8 22:37:49 2018   [INFO ] GLine Factory
+Fri Jun  8 22:37:49 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:37:49 2018   [INFO ] Default C-tor GLine
+Fri Jun  8 22:37:49 2018   [INFO ] Restored GLine from file
+Fri Jun  8 22:37:49 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:37:49 2018   [INFO ] GPixel factory
+Fri Jun  8 22:37:49 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:37:49 2018   [INFO ] Default C-tor of GPixel
+Fri Jun  8 22:37:49 2018   [INFO ] Restore Pixel from file
+Fri Jun  8 22:37:49 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:37:49 2018   [INFO ] Loaded from file txt.txt
+Fri Jun  8 22:37:49 2018   [INFO ] Draw line from (50,54) to (32,3)
+Fri Jun  8 22:37:49 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 22:37:49 2018   [INFO ] Draw GPicture to Canvas(-904227952)
+Fri Jun  8 22:37:49 2018   [INFO ] Draw Canvas(-904227952) to some stream
+Fri Jun  8 22:37:49 2018   [INFO ] GPicture D-tor
+Fri Jun  8 22:37:49 2018   [INFO ] GPicture D-tor
+Fri Jun  8 22:43:27 2018   [INFO ] Canvas(-1048308560) C-tor with values(rows:70, cols:70).
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor with values: 20, 20
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor of GPixel with values: 20 20 (
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor with values: 50, 54
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor GLine with values:(50,54) to (32,3)
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor with values: 35, 35
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor GCircle with values 35, 35, 10
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor with values: 22, 22
+Fri Jun  8 22:43:27 2018   [INFO ] C-tor of GPixel with values: 22 22  
+Fri Jun  8 22:43:27 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:43:27 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:43:27 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:43:27 2018   [INFO ] Counted len 1 of GPicture list
+Fri Jun  8 22:43:27 2018   [INFO ] Counted len 1 of GPicture list
+Fri Jun  8 22:43:27 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:43:27 2018   [INFO ] Counted len 3 of GPicture list
+Fri Jun  8 22:43:27 2018   [INFO ] Draw Pixel at(22,22)
+Fri Jun  8 22:43:27 2018   [INFO ] Draw line from (50,54) to (32,3)
+Fri Jun  8 22:43:27 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 22:43:27 2018   [INFO ] Draw GPicture to Canvas(-1048308560)
+Fri Jun  8 22:43:27 2018   [INFO ] Draw Canvas(-1048308560) to some stream
+Fri Jun  8 22:43:27 2018   [INFO ] Save Pixel to file
+Fri Jun  8 22:43:27 2018   [INFO ] Save Line to file
+Fri Jun  8 22:43:27 2018   [INFO ] Save Pixel to file
+Fri Jun  8 22:43:27 2018   [INFO ] Saved GPicture to file: txt.txt
+Fri Jun  8 22:43:27 2018   [INFO ] Canvas(-1048308560) cleared
+Fri Jun  8 22:43:27 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 22:43:27 2018   [INFO ] Default C-tor of GFactory
+Fri Jun  8 22:43:27 2018   [INFO ] GPixel factory
+Fri Jun  8 22:43:27 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 22:43:27 2018   [INFO ] Default C-tor of GPixel
+Fri Jun  8 22:43:27 2018   [INFO ] Restore Pixel from file
+Fri Jun  8 22:43:27 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 22:43:27 2018   [WARN ] No such type resgistered
+Fri Jun  8 23:02:51 2018   [INFO ] Canvas(1581080880) C-tor with values(rows:70, cols:70).
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor with values: 20, 20
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor of GPixel with values: 20 20 (
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor with values: 50, 54
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor GLine with values:(50,54) to (32,3)
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor with values: 35, 35
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor GCircle with values 35, 35, 10
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor with values: 22, 22
+Fri Jun  8 23:02:51 2018   [INFO ] C-tor of GPixel with values: 22 22  
+Fri Jun  8 23:02:51 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 23:02:51 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:02:51 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:02:51 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:02:51 2018   [INFO ] Counted len 2 of GPicture list
+Fri Jun  8 23:02:51 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 23:02:51 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 23:02:51 2018   [INFO ] Draw GPicture to Canvas(1581080880)
+Fri Jun  8 23:02:51 2018   [INFO ] Draw Canvas(1581080880) to some stream
+Fri Jun  8 23:02:51 2018   [INFO ] Circle saved
+Fri Jun  8 23:02:51 2018   [INFO ] Save Pixel to file
+Fri Jun  8 23:02:51 2018   [INFO ] Saved GPicture to file: txt.txt
+Fri Jun  8 23:02:51 2018   [INFO ] Canvas(1581080880) cleared
+Fri Jun  8 23:02:51 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 23:02:51 2018   [INFO ] Default C-tor of GFactory
+Fri Jun  8 23:02:51 2018   [INFO ] GCircle Factory
+Fri Jun  8 23:02:51 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 23:02:51 2018   [INFO ] Default C-tor of GCircle
+Fri Jun  8 23:02:51 2018   [INFO ] Restored GCircle
+Fri Jun  8 23:02:51 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:02:51 2018   [INFO ] GPixel factory
+Fri Jun  8 23:02:51 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 23:02:51 2018   [INFO ] Default C-tor of GPixel
+Fri Jun  8 23:02:51 2018   [INFO ] Restore Pixel from file
+Fri Jun  8 23:02:51 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:02:51 2018   [INFO ] Loaded from file txt.txt
+Fri Jun  8 23:02:51 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 23:02:51 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 23:02:51 2018   [INFO ] Draw GPicture to Canvas(1581080880)
+Fri Jun  8 23:02:51 2018   [INFO ] Draw Canvas(1581080880) to some stream
+Fri Jun  8 23:02:51 2018   [INFO ] GPicture D-tor
+Fri Jun  8 23:02:51 2018   [INFO ] GPicture D-tor
+Fri Jun  8 23:05:47 2018   [INFO ] Canvas(1428180880) C-tor with values(rows:70, cols:70).
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor with values: 20, 20
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor of GPixel with values: 20 20 (
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor with values: 50, 54
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor GLine with values:(50,54) to (32,3)
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor with values: 35, 35
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor GCircle with values 35, 35, 10
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor with values: 22, 22
+Fri Jun  8 23:05:47 2018   [INFO ] C-tor of GPixel with values: 22 22  
+Fri Jun  8 23:05:47 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 23:05:47 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:05:47 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:05:47 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:05:47 2018   [INFO ] Counted len 2 of GPicture list
+Fri Jun  8 23:05:47 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 23:05:47 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 23:05:47 2018   [INFO ] Draw GPicture to Canvas(1428180880)
+Fri Jun  8 23:05:47 2018   [INFO ] Draw Canvas(1428180880) to some stream
+Fri Jun  8 23:05:47 2018   [INFO ] Circle saved
+Fri Jun  8 23:05:47 2018   [INFO ] Save Pixel to file
+Fri Jun  8 23:05:47 2018   [INFO ] Saved GPicture to file: txt.txt
+Fri Jun  8 23:05:47 2018   [INFO ] Canvas(1428180880) cleared
+Fri Jun  8 23:05:47 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 23:05:47 2018   [INFO ] Default C-tor of GFactory
+Fri Jun  8 23:05:47 2018   [INFO ] GCircle Factory
+Fri Jun  8 23:05:47 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 23:05:47 2018   [INFO ] Default C-tor of GCircle
+Fri Jun  8 23:05:47 2018   [INFO ] Restored GCircle
+Fri Jun  8 23:05:47 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:05:47 2018   [INFO ] GPixel factory
+Fri Jun  8 23:05:47 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 23:05:47 2018   [INFO ] Default C-tor of GPixel
+Fri Jun  8 23:05:47 2018   [INFO ] Restore Pixel from file
+Fri Jun  8 23:05:47 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:05:47 2018   [INFO ] Loaded from file txt.txt
+Fri Jun  8 23:05:47 2018   [INFO ] Drawing circle. R = 10 with center:(35, 35)
+Fri Jun  8 23:05:47 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 23:05:47 2018   [INFO ] Draw GPicture to Canvas(1428180880)
+Fri Jun  8 23:05:47 2018   [INFO ] Draw Canvas(1428180880) to some stream
+Fri Jun  8 23:05:47 2018   [INFO ] GPicture D-tor
+Fri Jun  8 23:05:47 2018   [INFO ] GPicture D-tor
+Fri Jun  8 23:10:18 2018   [INFO ] Canvas(-1598691680) C-tor with values(rows:70, cols:70).
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor with values: 20, 20
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor of GPixel with values: 20 20 (
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor with values: 50, 54
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor GLine with values:(50,54) to (32,3)
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor with values: 35, 35
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor GCircle with values 35, 35, 10
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor with values: 22, 22
+Fri Jun  8 23:10:18 2018   [INFO ] C-tor of GPixel with values: 22 22  
+Fri Jun  8 23:10:18 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 23:10:18 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:10:18 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:10:18 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:10:18 2018   [INFO ] Counted len 2 of GPicture list
+Fri Jun  8 23:10:18 2018   [INFO ] Draw line from (50,54) to (32,3)
+Fri Jun  8 23:10:18 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 23:10:18 2018   [INFO ] Draw GPicture to Canvas(-1598691680)
+Fri Jun  8 23:10:18 2018   [INFO ] Draw Canvas(-1598691680) to some stream
+Fri Jun  8 23:10:18 2018   [INFO ] Save Line to file
+Fri Jun  8 23:10:18 2018   [INFO ] Save Pixel to file
+Fri Jun  8 23:10:18 2018   [INFO ] Saved GPicture to file: txt.txt
+Fri Jun  8 23:10:18 2018   [INFO ] Canvas(-1598691680) cleared
+Fri Jun  8 23:10:18 2018   [INFO ] Default C-tor of Picture
+Fri Jun  8 23:10:18 2018   [INFO ] Default C-tor of GFactory
+Fri Jun  8 23:10:18 2018   [INFO ] GLine Factory
+Fri Jun  8 23:10:18 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 23:10:18 2018   [INFO ] Default C-tor GLine
+Fri Jun  8 23:10:18 2018   [INFO ] Restored GLine from file
+Fri Jun  8 23:10:18 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:10:18 2018   [INFO ] GPixel factory
+Fri Jun  8 23:10:18 2018   [INFO ] Default C-tor of GItem
+Fri Jun  8 23:10:18 2018   [INFO ] Default C-tor of GPixel
+Fri Jun  8 23:10:18 2018   [INFO ] Restore Pixel from file
+Fri Jun  8 23:10:18 2018   [INFO ] PushBack GItem to GPicture
+Fri Jun  8 23:10:18 2018   [INFO ] Loaded from file txt.txt
+Fri Jun  8 23:10:18 2018   [INFO ] Draw line from (50,54) to (32,3)
+Fri Jun  8 23:10:18 2018   [INFO ] Draw Pixel at(20,20)
+Fri Jun  8 23:10:18 2018   [INFO ] Draw GPicture to Canvas(-1598691680)
+Fri Jun  8 23:10:18 2018   [INFO ] Draw Canvas(-1598691680) to some stream
+Fri Jun  8 23:10:18 2018   [INFO ] GPicture D-tor
+Fri Jun  8 23:10:18 2018   [INFO ] GPicture D-tor

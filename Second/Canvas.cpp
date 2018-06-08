@@ -64,7 +64,7 @@ void Canvas::checkBounds(int row, int col) const
 			logger(LOG_WARN,"Got minus value(s): (%d, %d)", row, col);
 			throw 2;
 		}
-		else if(row < rows() || col < cols())
+		else if(row > rows() || col > cols())
 		{
 			logger(LOG_WARN,"Value(s)(%d, %d)  out if canvas.", row, col);
 			//cout <<  "Bad value(s) " << row << ", " << col << endl;
@@ -72,7 +72,7 @@ void Canvas::checkBounds(int row, int col) const
 		}
 		else
 		{
-			logger(LOG_INFO,"Good checked values(%d, %d)", row, col);
+			//logger(LOG_INFO,"Good checked values(%d, %d)", row, col);
 		}
 	}
 	catch(int i)

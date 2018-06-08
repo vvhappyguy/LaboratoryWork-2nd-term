@@ -1,3 +1,2 @@
-GCircle 15 15 10
-GLine 10 20 30 40
-GPixel 5 40 ^
+GLine 50 54 32 3
+GPixel 20 20 (
