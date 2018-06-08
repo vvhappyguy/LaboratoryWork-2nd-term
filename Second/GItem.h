@@ -6,14 +6,14 @@
 class GItem 
 {
 	protected:
-		int _x,_y; 
+		int _x,_y;
 	public:
 		GItem();
 		GItem(int x, int y);
 		virtual ~GItem();
 		virtual void draw(Canvas&) = 0;
 		virtual void save(std::ostream&) = 0;
-		virtual void restore(std::istream&) = 0;
+		virtual void restore(std::istream&)= 0 ;
 
 		virtual GItem* clone() = 0;
 
@@ -27,12 +27,12 @@ class GItem
 class GFactory
 {
 	public:
-		typedef GItem* (*Factory)();
+		typedef GItem* (Factory)();
 	private:
 	struct Registry
 	{
 		char TypeId[20];
-		GItem* (factory)();
+		Factory* factory;
 	} GTypes[100];
 	size_t _types;
 
@@ -42,7 +42,7 @@ class GFactory
 
 	public:
 
-	void registerType(const char* typeId, Factory factory);
+	void registerType(const char* typeId, Factory* factory);
 	Factory* getFactory(const char* typeId) const;
 
 	static GFactory& instance() { static GFactory _instance; return _instance; }
@@ -130,10 +130,10 @@ class GPicture
 		size_t numItems() const;
 		GItem*& at(size_t pos);
 		const GItem* at(size_t pos) const;
-		
-		void push_back(GItem* Item);
+	
+		void push_back(GItem * Item);
 		void add(GItem* item, size_t pos = 0);
 		void del(size_t pos = 0);
 };
 
-#endif
+#endif 

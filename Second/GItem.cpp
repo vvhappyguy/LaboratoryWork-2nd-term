@@ -372,5 +372,15 @@ void GPicture::load(const char* filename)
 	istr.close();
 }
 
+GPicture::~GPicture()
+{
+	while(this->_head != NULL)
+	{
+		Node* it = _head->next;
+		delete _head;
+		_head = it;
+	}
+}
+
 void GPicture::add(GItem* Item, size_t pos){}
 void GPicture::del(size_t pos){}
